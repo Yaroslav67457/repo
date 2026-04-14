@@ -16,10 +16,6 @@ def add_cors_headers(response):
 def after_request(response):
     return add_cors_headers(response)
 
-@app.route('/controller_1.6')
-def control_page():
-    return render_template('control.html')
-
 @app.route('/', methods=["GET", "POST", "OPTIONS"])
 def main():
     if request.method == "OPTIONS":
